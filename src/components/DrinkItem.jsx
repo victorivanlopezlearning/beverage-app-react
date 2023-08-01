@@ -1,7 +1,9 @@
 import { Col, Card, Button } from "react-bootstrap";
+import useDrinks from "../hooks/useDrinks";
 
 export default function DrinkItem({ drink }) {
 
+  const { toggleModal } = useDrinks();
   const { strDrink: name, strDrinkThumb: image } = drink;
 
   return (
@@ -17,6 +19,9 @@ export default function DrinkItem({ drink }) {
           <Button
             variant="warning"
             className="w-100 mt-2 fw-bold"
+            onClick={() => {
+              toggleModal();
+            }}
           >
             Ver Receta
           </Button>
