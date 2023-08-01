@@ -2,9 +2,9 @@ import { Col, Card, Button } from "react-bootstrap";
 import useDrinks from "../hooks/useDrinks";
 
 export default function DrinkItem({ drink }) {
+  const { idDrink, strDrink: name, strDrinkThumb: image } = drink;
 
-  const { toggleModal } = useDrinks();
-  const { strDrink: name, strDrinkThumb: image } = drink;
+  const { toggleModal, handleSetId } = useDrinks();
 
   return (
     <Col md={6} lg={3}>
@@ -21,6 +21,7 @@ export default function DrinkItem({ drink }) {
             className="w-100 mt-2 fw-bold"
             onClick={() => {
               toggleModal();
+              handleSetId(idDrink);
             }}
           >
             Ver Receta
