@@ -9,8 +9,10 @@ export const DrinksProvider = ({ children }) => {
   const [drink, setDrink] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [idDrink, setIdDrink] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const getDrink = async () => {
+    setLoading(true);
     if (idDrink === '') return;
 
     const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`;
@@ -20,6 +22,8 @@ export const DrinksProvider = ({ children }) => {
       setDrink(data.drinks[0]);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -54,6 +58,7 @@ export const DrinksProvider = ({ children }) => {
         showModal,
         handleSetId,
         drink,
+        loading,
       }}
     >
       {children}
