@@ -1,5 +1,17 @@
 # Drinks app | React - React Bootstrap - API - Context - Vite
 
+## Description
+- Development with React.
+- State management whit React Context API.
+- Custom Hooks
+- Filters by category.
+- API [TheCocktailDB](https://www.thecocktaildb.com/).
+
+## Preview
+| **Search** |
+| :-------------: |
+| ![Search](https://i.imgur.com/SEGyAqT.gif) |
+
 ## Installation
 
 To install and run the project locally, follow these steps:
